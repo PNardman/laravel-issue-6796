@@ -18,13 +18,6 @@ The app is hosted at `localhost:8000`.
 
 ---
 
-### ⚡ Setup the App with Octane (Using Laravel Sail)
-
-1. Make sure Artisan is not running and you have docker running.  
-2. Run `./vendor/bin/sail build --no-cache` and wait for the images to build.  
-3. Run `./vendor/bin/sail up -d`.
-
----
 
 ### 🧪 App Walkthrough without Octane
 
@@ -33,7 +26,16 @@ The app is hosted at `localhost:8000`.
 3. Log out.  
 4. Log in with your credentials.  
 5. You should see a blank screen with a message indicating that the customized pipeline is used.  
-   This is expected behavior and works correctly when the request is served normally.
+   *This is expected behavior and works correctly when the request is served normally.*
+---
+
+### ⚡ Setup the App with Octane (Using Laravel Sail)
+
+1. Make sure Artisan is not running and you disabled `npm run dev` as well and you have docker running.  
+2. Run `./vendor/bin/sail build --no-cache` and wait for the images to build.  
+3. Run `./vendor/bin/sail up -d`.
+4. Run `npm run dev` again  
+
 
 ---
 
@@ -41,4 +43,4 @@ The app is hosted at `localhost:8000`.
 
 1. *(Optional)* Create a user if you haven’t already.  
 2. Log in with your credentials.  
-3. The normal 2FA screen will appear, and the custom login pipeline will be skipped.
+3. The normal 2FA screen will appear, and the custom login pipeline will be skipped. This is *incorrect*!
