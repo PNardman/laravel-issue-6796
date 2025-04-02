@@ -3,6 +3,8 @@ The app contains basic user registration and 2FA.
 I added a custom step in the authentication pipeline that exists the application BEFORE reaching the 2FA screen. 
 When this point is reached, we know that everything is working as expected. 
 
+App is hosted at localhost:8000 
+
 # Setup the app with artisan
 
 1. `composer install`
