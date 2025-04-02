@@ -1,34 +1,44 @@
-# Reproducing Repository for https://github.com/laravel/nova-issues/issues/6797
-The app contains basic user registration and 2FA. 
-I added a custom step in the authentication pipeline that exists the application BEFORE reaching the 2FA screen. 
-When this point is reached, we know that everything is working as expected. 
+# Reproducing Repository for [laravel/nova-issues#6797](https://github.com/laravel/nova-issues/issues/6797)
 
-App is hosted at localhost:8000 
+This app contains basic user registration and two-factor authentication (2FA).  
+A custom step has been added to the authentication pipeline that exits the application **before** reaching the 2FA screen.  
+When this point is reached, it indicates that everything is working as expected.
 
-# Setup the app with artisan
+The app is hosted at `localhost:8000`.
 
-1. `composer install`
-4. `npm install && npm run build`
-5. `php artisan migrate`
-6. `php artisan serve`
-7. `npm run dev` 
+---
 
-# Setup app with octane (using laravel sail)
+### ⚙️ Setup the App with Artisan
 
-1. Make sure artisan is not running any more.
-2. run `./vendor/bin/sail build --no-cache` and wait for the images to build
-3. `./vendor/bin/sail up -d`
-4. `./vendor/bin/sail up -d`
+1. `composer install`  
+2. `npm install && npm run build`  
+3. `php artisan migrate`  
+4. `php artisan serve`  
+5. `npm run dev`
 
-# App walthrough without octane
+---
 
-1. Create a user by registering
-2. Enable two factor authentication
-3. log out
-4. log in with your credentials
-5. you should see a blank screen with a message specifying that the customized pipeline is used, this is expected behavior and works normally when just serving the request. 
+### ⚡ Setup the App with Octane (Using Laravel Sail)
 
-# App walkthrough with octane
-1. (optional) create a user if not already done before
-2. log in with your user credentials
-3. normal 2FA screen gets shown and custom login pipeline gets skipped. 
+1. Make sure Artisan is not running.  
+2. Run `./vendor/bin/sail build --no-cache` and wait for the images to build.  
+3. Run `./vendor/bin/sail up -d`.
+
+---
+
+### 🧪 App Walkthrough without Octane
+
+1. Register to create a user.  
+2. Enable two-factor authentication.  
+3. Log out.  
+4. Log in with your credentials.  
+5. You should see a blank screen with a message indicating that the customized pipeline is used.  
+   This is expected behavior and works correctly when the request is served normally.
+
+---
+
+### 🧪 App Walkthrough with Octane
+
+1. *(Optional)* Create a user if you haven’t already.  
+2. Log in with your credentials.  
+3. The normal 2FA screen will appear, and the custom login pipeline will be skipped.
