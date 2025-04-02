@@ -25,8 +25,8 @@ The app is hosted at `localhost:8000`.
 2. Enable two-factor authentication.  
 3. Log out.  
 4. Log in with your credentials.  
-5. You should see a blank screen with a message indicating that the customized pipeline is used.  
-   *This is expected behavior and works correctly when the request is served normally.*
+5. You should see a blank screen with a message indicating that the customized pipeline is used. The application dies.  
+   *This is expected behavior and works correctly when the request is served normally.* I added this so you can immediately see that custom behavior gets skipped on octane. 
 ---
 
 ### ⚡ Setup the App with Octane (Using Laravel Sail)
