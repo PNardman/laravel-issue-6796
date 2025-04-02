@@ -20,7 +20,7 @@ The app is hosted at `localhost:8000`.
 
 ### ⚡ Setup the App with Octane (Using Laravel Sail)
 
-1. Make sure Artisan is not running.  
+1. Make sure Artisan is not running and you have docker running.  
 2. Run `./vendor/bin/sail build --no-cache` and wait for the images to build.  
 3. Run `./vendor/bin/sail up -d`.
 
